@@ -1,8 +1,6 @@
 import { Request, Response } from 'express'
 import { imageProcessing } from '../Services/ImageServices'
 import { TypeParams } from '../types'
-const sharp = require('sharp')
-
 class ImageProcessingController {
     public async processing(req: Request, res: Response) {
         try {
