@@ -13,6 +13,13 @@ provider:
 
 functions:
   express:
-    handler: app/express.handler
+    handler: app/server.handler
+    name: api
     events:
       - http: ANY /{proxy+}  
+  lambda:
+    handler: app/lambda.handler
+    events:
+      - http: GET /lambda
+        
+      
