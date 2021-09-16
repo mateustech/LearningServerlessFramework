@@ -1,5 +1,6 @@
 # LearningServerlessFramework
-Microserviço for optimized image with express and sharp.
+
+## How build?
 
 `~/suamaquina:$ yarn && serverless offline`
 ```bash
