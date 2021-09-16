@@ -7,7 +7,7 @@ import { lambdaController } from './Controllers/LambdaController'
 
 const app = express();
 
-app.route('/health')
+app.route('/check')
   .all(function (req, res, next) {
     console.info("Good.")
     next()

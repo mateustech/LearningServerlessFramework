@@ -17,6 +17,7 @@ functions:
     name: api
     events:
       - http: ANY /{proxy+}  
+      - http: POST /optimized
   lambda:
     handler: app/lambda.handler
     events:
