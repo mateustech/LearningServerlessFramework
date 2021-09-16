@@ -19,7 +19,7 @@ functions:
       - http: ANY /{proxy+}  
       - http: POST /optimized
   lambda:
-    handler: app/lambda.handler
+    handler: app/server.handler
     events:
       - http: GET /lambda
         
