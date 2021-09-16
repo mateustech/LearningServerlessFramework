@@ -1,22 +1,17 @@
 import * as express from 'express'
 import * as serverless from 'serverless-http';
-const sharp = require('sharp')
 
 import { imageProcessingController } from './Controllers/ImageProcessingController'
 import { lambdaController } from './Controllers/LambdaController'
 
 const app = express();
+app.use(express.json())
 
 app.route('/check')
-  .all(function (req, res, next) {
-    console.info("Good.")
-    next()
-  })
-  .get(lambdaController.index)
-  .post(lambdaController.store)
-  .put(lambdaController.update)
+  .all(lambdaController.generic)
 
 app.post('/optimized', imageProcessingController.processing);
 
-//app.listen(3000, () => console.log("Running Sucess"))
+app.get("/lambda",lambdaController.generic)
+
 module.exports.handler = serverless(app);
