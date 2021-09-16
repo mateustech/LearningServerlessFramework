@@ -1,0 +1,18 @@
+service: pocnodeserveless
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
+  - serverless-plugin-typescript-express
+  
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+functions:
+  express:
+    handler: app/express.handler
+    events:
+      - http: ANY /{proxy+}  
